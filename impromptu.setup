@@ -3,6 +3,6 @@
 (install-extension
   'impromptu
   '("impromptu.so")
-  '((version 0.1)))
+  '())
 
 ;; vim:set ft=scheme:
