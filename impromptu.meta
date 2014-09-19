@@ -1,0 +1,11 @@
+(
+(license "BSD")
+
+(category tools)
+
+(needs embedded-test)
+
+(author "Jason Felice")
+(synopsis "Spawn $EDITOR to update association list for CLI scripts")
+)
+

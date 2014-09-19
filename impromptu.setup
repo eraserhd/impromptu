@@ -1,0 +1,8 @@
+(compile -s -O2 -d1 impromptu.scm)
+
+(install-extension
+  'impromptu
+  '("impromptu.so")
+  '((version 0.1)))
+
+;; vim:set ft=scheme:
