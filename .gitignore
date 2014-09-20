@@ -1,2 +1,3 @@
 *.so
+*.import.scm
 salmonella.log

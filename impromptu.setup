@@ -1,8 +1,10 @@
-(compile -s -O2 -d1 impromptu.scm)
+(compile -s -O2 -d1 impromptu.scm -unit impromptu)
+(compile -s -O2 -d1 impromptu.scm -j impromptu)
+(compile -s -O2 -d0 impromptu.import.scm)
 
 (install-extension
   'impromptu
-  '("impromptu.so")
+  '("impromptu.import.so" "impromptu.so")
   '())
 
 ;; vim:set ft=scheme:
