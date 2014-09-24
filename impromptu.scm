@@ -56,7 +56,10 @@
 	  (irregex-match-substring m 'rest)))))
 
   (define (tokenize s)
-    (apply append (map parse-line (irregex-split newline-re s))))
+    (apply append
+	   (map parse-line
+		(map (cut string-append <> "\n")
+		     (irregex-split newline-re s)))))
 
   (define (parse-template s)
     (define current-field #f)
@@ -87,7 +90,8 @@
 	'((Foo: . "Bar") (Baz: . "Quux")))
   (test (parse-template ":Foo:\nHello\n")
 	'((Foo: . "Hello")))
-
+  (test (parse-template ":Foo:\nHello\nWorld!\nThree\n")
+	'((Foo: . "Hello\nWorld!\nThree")))
 
   ;; -- Editing --
 
