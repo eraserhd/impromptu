@@ -1,8 +1,7 @@
-(require-extension irregex embedded-test utils)
-
 (module impromptu (edit-properties)
 
-  (import scheme chicken posix utils irregex embedded-test)
+  (import scheme chicken)
+  (use posix irregex embedded-test utils)
 
   ;; -- Generating templates --
 

@@ -1,4 +1,4 @@
-(require-extension posix)
+(use posix embedded-test)
 (setenv "TESTS" "1")
 
 (change-directory "..")
