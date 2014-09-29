@@ -96,6 +96,7 @@
 
   (define (editor)
     (or (get-environment-variable "EDITOR")
+	(get-environment-variable "VISUAL")
 	"vi"))
 
   (define (edit-command filename)
@@ -107,8 +108,14 @@
 	"'vim' '/tmp/foo.txt'")
   (test (begin
 	  (unsetenv "EDITOR")
+	  (unsetenv "VISUAL")
 	  (edit-command "/tmp/foo.txt"))
 	"'vi' '/tmp/foo.txt'")
+  (test (begin
+	  (unsetenv "EDITOR")
+	  (setenv "VISUAL" "/x/vi")
+	  (edit-command "/tmp/foo.txt"))
+	"'/x/vi' '/tmp/foo.txt'")
 
   (define (in-temp-file contents)
     (let-values (((fd filename) (file-mkstemp "/tmp/impromptu.XXXXXX")))
