@@ -5,7 +5,7 @@
 (module impromptu (edit-properties)
 
   (import scheme chicken)
-  (use posix irregex embedded-test utils impromptu.scatter impromptu.gather impromptu.edit)
+  (use posix utils impromptu.scatter impromptu.gather impromptu.edit)
 
   (define (edit-properties alist)
     (let* ((text (make-template alist))
