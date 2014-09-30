@@ -3,7 +3,7 @@
 
 (category tools)
 
-(needs embedded-test)
+(test-depends embedded-test)
 
 (author "Jason Felice")
 (synopsis "Spawn $EDITOR to update association list for CLI scripts")

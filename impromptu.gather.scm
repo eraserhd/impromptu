@@ -49,16 +49,5 @@
 	  (irregex-replace trim-re (cdr entry) "")))
       (cdr (reverse fields))))
 
-
-  (test (parse-template ":Foo: Bar\n")
-	'((Foo: . "Bar")))
-  (test (parse-template ":Foo: Bar\n:Baz: Quux\n")
-	'((Foo: . "Bar") (Baz: . "Quux")))
-  (test (parse-template ":Foo:\nHello\n")
-	'((Foo: . "Hello")))
-  (test (parse-template ":Foo:\nHello\nWorld!\nThree\n")
-	'((Foo: . "Hello\nWorld!\nThree")))
-
-
   )
 

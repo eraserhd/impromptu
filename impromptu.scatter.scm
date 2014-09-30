@@ -23,13 +23,4 @@
 	"\n"
 	(make-template (cdr alist)))))
 
-  (test (make-template '())
-	"")
-  (test (make-template '((Foo: . "bar")))
-	":Foo: bar\n")
-  (test (make-template '((Foo: . "bar") (Baz: . "quux")))
-	":Foo: bar\n:Baz: quux\n")
-  (test (make-template '((Foo: . "bar") (Baz: . "Hello, this is a\nmulti-line test.")))
-	":Foo: bar\n:Baz:\nHello, this is a\nmulti-line test.\n")
-
   )

@@ -1,7 +1,11 @@
-(use posix embedded-test)
-(setenv "TESTS" "1")
+(use test)
 
-(change-directory "..")
-(include "impromptu.scm")
+(load-relative "../impromptu.scatter.scm")
+(load-relative "../impromptu.gather.scm")
+(load-relative "../impromptu.edit.scm")
 
-(run-tests)
+(test-begin)
+(load-relative "scatter.scm")
+(load-relative "gather.scm")
+(load-relative "edit.scm")
+(test-end)
