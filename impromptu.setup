@@ -2,9 +2,24 @@
 (compile -s -O2 -d1 impromptu.scm -j impromptu)
 (compile -s -O2 -d0 impromptu.import.scm)
 
+(compile -s -O2 -d1 impromptu.scatter.scm -unit impromptu.scatter)
+(compile -s -O2 -d1 impromptu.scatter.scm -j impromptu.scatter)
+(compile -s -O2 -d0 impromptu.scatter.import.scm)
+
+(compile -s -O2 -d1 impromptu.gather.scm -unit impromptu.gather)
+(compile -s -O2 -d1 impromptu.gather.scm -j impromptu.gather)
+(compile -s -O2 -d0 impromptu.gather.import.scm)
+
+(compile -s -O2 -d1 impromptu.edit.scm -unit impromptu.edit)
+(compile -s -O2 -d1 impromptu.edit.scm -j impromptu.edit)
+(compile -s -O2 -d0 impromptu.edit.import.scm)
+
 (install-extension
   'impromptu
-  '("impromptu.import.so" "impromptu.so")
+  '("impromptu.so" "impromptu.import.so"
+    "impromptu.scatter.so" "impromptu.scatter.import.so"
+    "impromptu.gather.so" "impromptu.gather.import.so"
+    "impromptu.edit.so" "impromptu.edit.import.so")
   '())
 
 ;; vim:set ft=scheme:
