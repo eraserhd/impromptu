@@ -9,7 +9,7 @@
 	"vi"))
 
   (define (edit-command filename)
-    (string-append (qs (editor)) " " (qs filename)))
+    (string-append (editor) " " (qs filename)))
 
   (define (in-temp-file contents)
     (let-values (((fd filename) (file-mkstemp "/tmp/impromptu.XXXXXX")))
