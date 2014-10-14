@@ -1,7 +1,7 @@
 (module impromptu.scatter (make-template)
 
   (import scheme chicken)
-  (use posix irregex embedded-test utils)
+  (use posix irregex utils)
 
   (define (format-value value)
     (if (memv #\newline (string->list value))

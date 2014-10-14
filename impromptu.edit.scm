@@ -1,7 +1,7 @@
 (module impromptu.edit (edit-command in-temp-file)
 
   (import scheme chicken)
-  (use posix irregex embedded-test utils)
+  (use posix irregex utils)
 
   (define (editor)
     (or (get-environment-variable "EDITOR")

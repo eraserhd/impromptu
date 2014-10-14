@@ -1,7 +1,7 @@
 (module impromptu.gather (parse-template)
 
   (import scheme chicken)
-  (use posix irregex embedded-test utils)
+  (use posix irregex utils)
 
   (define field-re (irregex
 		     '(: bos #\: (=> name (: upper-case (* (or alpha digit #\-)))) #\: (* whitespace) (=> rest (* any)))
